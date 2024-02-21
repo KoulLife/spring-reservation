@@ -52,6 +52,8 @@ public class CounselDTO {
 
     private LocalDateTime appliedAt;
 
+    private LocalDateTime createdAt;
+
     private LocalDateTime updatedAt;
   }
 }
