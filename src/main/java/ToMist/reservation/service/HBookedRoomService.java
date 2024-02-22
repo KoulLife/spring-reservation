@@ -1,4 +1,4 @@
 package ToMist.reservation.service;
 
-public interface HBookedRoomService {
+public class HBookedRoomService {
 }
