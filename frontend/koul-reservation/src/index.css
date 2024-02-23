@@ -75,28 +75,28 @@ body {
   font-size:medium;
 }
 .vertical-rule{
-  border-left: '0.5px solid black';
-  height: '100vh'
+  border-left: solid black 0.5px;
+  height: 100vh;
 }
 
 
 
-.parallax {
-  background-image: url("./assets/images/parrall.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50vh;
-}
+/*.parallax {*/
+/*  background-image: url("./assets/images/parrall.jpg");*/
+/*  background-attachment: fixed;*/
+/*  background-position: center;*/
+/*  background-repeat: no-repeat;*/
+/*  background-size: cover;*/
+/*  height: 50vh;*/
+/*}*/
 
-.header {
-  position: relative;
-  height: 150px;
-  background-size: cover;
-  background-image: url("./assets/images/services4.jpg");
-  background-position: center center;
-}
+/*.header {*/
+/*  position: relative;*/
+/*  height: 150px;*/
+/*  background-size: cover;*/
+/*  background-image: url("./assets/images/services4.jpg");*/
+/*  background-position: center center;*/
+/*}*/
 .header-title {
   color: #fff;
   font-size: 4rem;
@@ -188,13 +188,13 @@ body {
 }
 
 /* The header banner */
-.header-banner {
-  background-image:  url("./assets/images/services-1.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  height: 80vh;
-}
+/*.header-banner {*/
+/*  background-image:  url("./assets/images/services-1.jpg");*/
+/*  background-size: cover;*/
+/*  background-position: center;*/
+/*  position: relative;*/
+/*  height: 80vh;*/
+/*}*/
 
 .header-banner {
   position: relative;
@@ -222,7 +222,3 @@ body {
   height: 60px;
   text-align: center;
 }
-
-
-
-
