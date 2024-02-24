@@ -1,4 +1,4 @@
 package ToMist.reservation.repository;
 
-public interface HBookedRoomRepository {
+public interface BookedRoomRepository {
 }

@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class HRoom {
+public class Room {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -23,11 +23,11 @@ public class HRoom {
   private BigDecimal roomPrice;
   private boolean isBooked = false;
   @Lob private Blob photo;
-  @OneToMany(mappedBy = "room", fetch = FetchType.LAZY, cascade = CascadeType.ALL) private List<HBookedRoom> bookings;
+  @OneToMany(mappedBy = "room", fetch = FetchType.LAZY, cascade = CascadeType.ALL) private List<BookedRoom> bookings;
 
-  public HRoom(){ this.bookings = new ArrayList<>();}
+  public Room(){ this.bookings = new ArrayList<>();}
 
-  public void addBooking(HBookedRoom booking){
+  public void addBooking(BookedRoom booking){
     if(bookings == null){
       bookings = new ArrayList<>();
     }
