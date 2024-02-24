@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class HBookedRoom {
+public class BookedRoom {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long bookingId;
@@ -25,7 +25,7 @@ public class HBookedRoom {
   @Column(name = "children") private int NumOfChildren;
   @Column(name = "total_guest") private int totalNumOfGuest;
   @Column(name = "confirmation_Code") private String bookingConfirmationCode;
-  @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "room_id") private HRoom room;
+  @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "room_id") private Room room;
 
   public void calculateTotalNumberOfGuest(){
     this.totalNumOfGuest = this.NumOfAdults + NumOfChildren;
