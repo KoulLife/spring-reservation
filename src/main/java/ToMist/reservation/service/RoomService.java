@@ -1,7 +1,7 @@
 package ToMist.reservation.service;
 
-import ToMist.reservation.model.HRoom;
-import ToMist.reservation.repository.HRoomRepository;
+import ToMist.reservation.model.Room;
+import ToMist.reservation.repository.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,15 +11,16 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class HRoomService implements IRoomService{
-  private final HRoomRepository roomRepository;
+public class RoomService implements IRoomService{
+  private final RoomRepository roomRepository;
 
   @Override
-  public HRoom addNewRoom(MultipartFile file, String roomType, BigDecimal roomPrice) throws IOException, SQLException {
-    HRoom room = new HRoom();
+  public Room addNewRoom(MultipartFile file, String roomType, BigDecimal roomPrice) throws IOException, SQLException {
+    Room room = new Room();
     room.setRoomType(roomType);
     room.setRoomPrice(roomPrice);
     if(!file.isEmpty()){
@@ -29,5 +30,10 @@ public class HRoomService implements IRoomService{
     }
 
     return roomRepository.save(room);
+  }
+
+  @Override
+  public List<String> getAllRoomTypes() {
+    return roomRepository.findDistinctRoomTypes();
   }
 }
