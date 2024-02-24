@@ -75,7 +75,7 @@ const AddRoom = () => {
               </label>
               <input
                 className={"form-control"}
-                required
+                // required
                 id={"roomPrice"}
                 name={"roomPrice"}
                 value={newRoom.roomPrice}
