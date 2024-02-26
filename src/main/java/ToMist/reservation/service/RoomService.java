@@ -86,5 +86,8 @@ public class RoomService implements IRoomService{
     return roomRepository.save(room);
   }
 
-
+  @Override
+  public Optional<Room> getRoomById(Long roomId) {
+    return Optional.of(roomRepository.findById(roomId).get());
+  }
 }
