@@ -30,6 +30,7 @@ public class RoomController {
   private final IRoomService roomService;
   private final BookingService bookingService;
 
+  //새로운 방 추가
   @PostMapping("/add/new-room")
   public ResponseEntity<RoomResponse> addNewRoom(
     @RequestParam("photo") MultipartFile photo,
@@ -41,11 +42,13 @@ public class RoomController {
     return ResponseEntity.ok(response);
   }
 
+  // 타입으로 방 검색
   @GetMapping("/room/types")
   public List<String> getRoomTypes(){
     return roomService.getAllRoomTypes();
   }
 
+  //모든 방 가져오기
   @GetMapping("/all-rooms")
   public ResponseEntity<List<RoomResponse>> getAllRooms() throws SQLException {
     List<Room> rooms = roomService.getAllRooms();
@@ -63,6 +66,7 @@ public class RoomController {
     return ResponseEntity.ok(roomResponses);
   }
 
+  // 방 삭제 roomId 이용
   @DeleteMapping("/delete/room/{roomId}")
   public ResponseEntity<Void> deleteRoom(@PathVariable Long roomId){
     roomService.deleteRoom(roomId);
