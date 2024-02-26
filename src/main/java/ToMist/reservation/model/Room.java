@@ -11,10 +11,11 @@ import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+
 @Getter
 @Setter
 @AllArgsConstructor
+@Entity
 public class Room {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
