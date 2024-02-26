@@ -1,6 +1,7 @@
 package ToMist.reservation.controller;
 
 import ToMist.reservation.exception.PhotoRetrievalException;
+import ToMist.reservation.exception.ResouceNotFoundException;
 import ToMist.reservation.model.BookedRoom;
 import ToMist.reservation.model.Room;
 import ToMist.reservation.response.BookingResponse;
@@ -22,6 +23,7 @@ import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -86,6 +88,15 @@ public class RoomController {
     theRoom.setPhoto(photoBlob);
     RoomResponse roomResponse = getRoomResponse(theRoom);
     return ResponseEntity.ok(roomResponse);
+  }
+
+  @GetMapping("/room/{roomId}")
+  public ResponseEntity<Optional<RoomResponse>> getRoomById(@PathVariable Long roomId){
+    Optional<Room> theRoom = roomService.getRoomById(roomId);
+    return theRoom.map(room -> {
+      RoomResponse roomResponse = getRoomResponse(room);
+      return  ResponseEntity.ok(Optional.of(roomResponse));
+    }).orElseThrow(() -> new ResouceNotFoundException("Room not found"));
   }
 
   private RoomResponse getRoomResponse(Room room){
