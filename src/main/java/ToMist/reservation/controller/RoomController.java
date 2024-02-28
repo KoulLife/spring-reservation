@@ -92,6 +92,7 @@ public class RoomController {
     return ResponseEntity.ok(roomResponse);
   }
 
+  // id로 방 찾기
   @GetMapping("/room/{roomId}")
   public ResponseEntity<Optional<RoomResponse>> getRoomById(@PathVariable Long roomId){
     Optional<Room> theRoom = roomService.getRoomById(roomId);
