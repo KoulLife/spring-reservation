@@ -126,6 +126,7 @@ public class RoomController {
     }
   }
 
+  // 방 상태
   private RoomResponse getRoomResponse(Room room){
     List<BookedRoom> bookings = getAllBookingsByRoomId(room.getId());
     List<BookingResponse> bookingInfo = bookings
